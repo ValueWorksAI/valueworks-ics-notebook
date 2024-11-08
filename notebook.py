@@ -107,9 +107,10 @@ class TransformedOrderItemsObject(BaseModel):
 
 
 # load the polars dataframes
-df_p = pl.DataFrame(data['product'])
-df_o = pl.DataFrame(data['order'])
-df_oi = pl.DataFrame(data['order_item'])
+# TODO: uncomment the following three lines
+# df_p = pl.DataFrame(data['product'])
+# df_o = pl.DataFrame(data['order'])
+# df_oi = pl.DataFrame(data['order_item'])
 
 
 # TODO: Perform the join and transformation of existing fields
@@ -124,11 +125,16 @@ transformed_df = "TODO"
 # %%
 
 # THIS IS JUST A CHECK TO MAKE SURE THE DATA IS TRANSFORMED CORRECTLY
-transformed_data = transformed_df.to_dicts()
+# TODO: uncomment the code and execute it
+# transformed_data = transformed_df.to_dicts()
+
+
 # Create a list of TransformedOrderItemsObject instances to make sure schema is correct
 # it will fail in case the schema is incorrect
-transformed_objects = [TransformedOrderItemsObject(
-    **item) for item in transformed_data]
+# TODO: uncomment the code and execute it
+
+# transformed_objects = [TransformedOrderItemsObject(
+#     **item) for item in transformed_data]
 
 # %%
 
@@ -163,12 +169,14 @@ sql_query = """
     TODO: add sql query here
 """
 
-print(ctx.execute(sql_query))
+# TODO: uncomment the code and execute it
+# print(ctx.execute(sql_query))
 
 # %%
 
 # Now perform the aggregation using Polars methods to achieve the same result
 result_df = "TODO"
 
-print(result_df)
+# TODO: uncomment the code and execute it
+# print(result_df)
 # %%
