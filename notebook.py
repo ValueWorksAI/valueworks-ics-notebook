@@ -88,6 +88,7 @@ data: dict[str, list[dict[str, Any]]] = {}
 
 
 class TransformedOrderItemsObject(BaseModel):
+    # month = order_date normalized to first day of month
     month: date
     order_item_id: int
     order_id: int
@@ -161,7 +162,8 @@ transformed_df = "TODO"
 # │ Charlie   ┆ 2023-01-01 ┆ 104136.19   ┆ 192            ┆ 546.961702         ┆ 53            │
 # └───────────┴────────────┴─────────────┴────────────────┴────────────────────┴───────────────┘
 
-ctx = pl.SQLContext(transformed_order_items=transformed_df, eager=True)
+# TODO: uncomment the code and execute it
+# ctx = pl.SQLContext(transformed_order_items=transformed_df, eager=True)
 
 # USING SQL
 # NOTE: table is called transformed_order_items
