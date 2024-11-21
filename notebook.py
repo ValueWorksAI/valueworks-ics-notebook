@@ -44,7 +44,7 @@ class APIWrapper:
         self.session = requests.Session()
         self.session.auth = (username, password)
 
-    def get_all_rows_of_object(self, object: str) -> list[dict[str, Any]]:
+    def get_all_rows_of_object(self, obj: str) -> list[dict[str, Any]]:
         # TODO: write the logic to retrieve all rows for a single object using the paginated endpoints
 
         length_data = "Should be a number: the number of rows for the object queried"
@@ -53,9 +53,9 @@ class APIWrapper:
         # this check should make sure all the data is returned
         if length_data != total:
             logger.error(
-                f'Data length of retrieved data is not equal to total for {object}')
+                f'Data length of retrieved data is not equal to total for {obj}')
             return []
-        logger.success(f'Successfully retrieved all data for {object}')
+        logger.success(f'Successfully retrieved all data for {obj}')
 
         # return the rows as a list of dictionaries
         # return out
